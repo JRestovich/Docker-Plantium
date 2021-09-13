@@ -1,0 +1,4 @@
+action/RecordTrajectory.action
+action/RecordTrajectory.idl
+action/ReplayTrajectory.action
+action/ReplayTrajectory.idl

@@ -1,0 +1,2 @@
+source;share/lgsvl_launch/environment/ament_prefix_path.sh
+source;share/lgsvl_launch/environment/path.sh

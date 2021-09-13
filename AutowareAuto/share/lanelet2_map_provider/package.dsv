@@ -1,0 +1,14 @@
+source;share/lanelet2_map_provider/hook/cmake_prefix_path.ps1
+source;share/lanelet2_map_provider/hook/cmake_prefix_path.dsv
+source;share/lanelet2_map_provider/hook/cmake_prefix_path.sh
+source;share/lanelet2_map_provider/hook/ld_library_path_lib.ps1
+source;share/lanelet2_map_provider/hook/ld_library_path_lib.dsv
+source;share/lanelet2_map_provider/hook/ld_library_path_lib.sh
+source;share/lanelet2_map_provider/hook/pythonpath.ps1
+source;share/lanelet2_map_provider/hook/pythonpath.dsv
+source;share/lanelet2_map_provider/hook/pythonpath.sh
+source;share/lanelet2_map_provider/local_setup.bash
+source;share/lanelet2_map_provider/local_setup.dsv
+source;share/lanelet2_map_provider/local_setup.ps1
+source;share/lanelet2_map_provider/local_setup.sh
+source;share/lanelet2_map_provider/local_setup.zsh

@@ -1,0 +1,3 @@
+source;share/socketcan/environment/ament_prefix_path.sh
+source;share/socketcan/environment/library_path.sh
+source;share/socketcan/environment/path.sh

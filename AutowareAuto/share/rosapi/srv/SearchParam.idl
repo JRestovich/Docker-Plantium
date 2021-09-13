@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from rosapi/srv/SearchParam.srv
+// generated code does not contain a copyright notice
+
+
+module rosapi {
+  module srv {
+    struct SearchParam_Request {
+      string name;
+    };
+    struct SearchParam_Response {
+      string global_name;
+    };
+  };
+};

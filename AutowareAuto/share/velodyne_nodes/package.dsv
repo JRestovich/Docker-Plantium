@@ -1,0 +1,14 @@
+source;share/velodyne_nodes/hook/cmake_prefix_path.ps1
+source;share/velodyne_nodes/hook/cmake_prefix_path.dsv
+source;share/velodyne_nodes/hook/cmake_prefix_path.sh
+source;share/velodyne_nodes/hook/ld_library_path_lib.ps1
+source;share/velodyne_nodes/hook/ld_library_path_lib.dsv
+source;share/velodyne_nodes/hook/ld_library_path_lib.sh
+source;share/velodyne_nodes/hook/pythonpath.ps1
+source;share/velodyne_nodes/hook/pythonpath.dsv
+source;share/velodyne_nodes/hook/pythonpath.sh
+source;share/velodyne_nodes/local_setup.bash
+source;share/velodyne_nodes/local_setup.dsv
+source;share/velodyne_nodes/local_setup.ps1
+source;share/velodyne_nodes/local_setup.sh
+source;share/velodyne_nodes/local_setup.zsh

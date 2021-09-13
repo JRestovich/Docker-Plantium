@@ -1,0 +1,2 @@
+autoware::lanelet2_map_provider::Lanelet2MapProviderNode;lib/liblanelet2_map_nodes.so
+autoware::lanelet2_map_provider::Lanelet2MapVisualizer;lib/liblanelet2_map_nodes.so

@@ -1,0 +1,103 @@
+version: '3.8'
+services: 
+
+  CARLA_container:
+    image: carlasim/carla:0.9.11
+    container_name: carla_container 
+    
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+    privileged: true 
+
+    environment:
+      - DISPLAY=$DISPLAY #:1
+      - SDL_VIDEODRIVER=x11
+    
+    networks:
+      test-network: #network name
+        aliases:
+          - carlita #link que agrega la dns server carlita
+    ports:
+      - "2000-2002:2000-2002"
+
+    #restart: on-failure
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+    command: ./CarlaUE4.sh -quality-level=Low -opengl 
+
+  ROS_Autoware_container:
+    #image: ros:foxy-ros1-bridge
+    image: althack/ros2:foxy-gazebo-nvidia
+    container_name: ros_container_2   
+
+
+    #command: ros2 run demo_nodes_cpp talker #ros2 run demo_nodes_cpp listener # source /opt/ros/foxy/setup.bash 
+    command: /bin/bash 
+    
+    volumes: 
+    - ./AutowareAuto:/home/AutowareAuto
+    - ./ros_WS:/home/ros_WS
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw #para la placa de video
+
+    tty: true
+
+    restart: on-failure
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+    privileged: true 
+
+    environment:
+      - DISPLAY=$DISPLAY 
+      - SDL_VIDEODRIVER=x11  
+      - QT_X11_NO_MITSHM=1 
+      - XAUTHORITY:$XAUTH 
+      
+    networks:
+      test-network: #network name
+        aliases:
+          - ros2 #link que agrega la dns server como CARLA y carlita
+
+  ROS_container:
+    #image: ros:foxy-ros1-bridge
+    image: ros:carla-ros
+    container_name: ros_container   
+
+
+    #command: ros2 run demo_nodes_cpp talker
+    command: bash -c "chmod 777 /home/folder/script.sh && ./home/folder/script.sh "
+
+    volumes: 
+      - ./folder:/home/folder
+
+    depends_on: 
+      - CARLA_container
+    
+    restart: on-failure
+    
+    networks:
+      test-network: #network name
+        aliases:
+          - rosito #link que agrega la dns server como CARLA y carlita
+
+  
+
+  
+networks:
+  test-network:
+    name: C&R_network
+  
+  
+

@@ -1,0 +1,1 @@
+autoware::perception::filters::point_cloud_fusion_nodes::PointCloudFusionNode;lib/libpointcloud_fusion_node.so

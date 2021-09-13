@@ -1,0 +1,1 @@
+autoware_auto_common;autoware_auto_geometry;geometry_msgs;motion_common;nav_msgs;tf2_msgs;tf2_ros;vehicle_interface;autoware_auto_msgs;lgsvl_msgs;rclcpp;rclcpp_components;ament_index_python;launch_ros;ament_cmake_gtest;ament_lint_auto;ament_lint_common;ros_testing

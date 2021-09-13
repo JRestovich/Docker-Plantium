@@ -1,0 +1,14 @@
+source;share/ray_ground_classifier/hook/cmake_prefix_path.ps1
+source;share/ray_ground_classifier/hook/cmake_prefix_path.dsv
+source;share/ray_ground_classifier/hook/cmake_prefix_path.sh
+source;share/ray_ground_classifier/hook/ld_library_path_lib.ps1
+source;share/ray_ground_classifier/hook/ld_library_path_lib.dsv
+source;share/ray_ground_classifier/hook/ld_library_path_lib.sh
+source;share/ray_ground_classifier/hook/pythonpath.ps1
+source;share/ray_ground_classifier/hook/pythonpath.dsv
+source;share/ray_ground_classifier/hook/pythonpath.sh
+source;share/ray_ground_classifier/local_setup.bash
+source;share/ray_ground_classifier/local_setup.dsv
+source;share/ray_ground_classifier/local_setup.ps1
+source;share/ray_ground_classifier/local_setup.sh
+source;share/ray_ground_classifier/local_setup.zsh

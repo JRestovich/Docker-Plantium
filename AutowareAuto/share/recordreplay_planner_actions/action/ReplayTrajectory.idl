@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from recordreplay_planner_actions/action/ReplayTrajectory.action
+// generated code does not contain a copyright notice
+
+
+module recordreplay_planner_actions {
+  module action {
+    @verbatim (language="comment", text=
+      " ReplayTrajectory.action")
+    struct ReplayTrajectory_Goal {
+      string replay_path;
+    };
+    struct ReplayTrajectory_Result {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct ReplayTrajectory_Feedback {
+      int32 remaining_length;
+    };
+  };
+};
