@@ -1,14 +1,18 @@
 Mandatory command for all options:
 	Download docker 
-		- https://www.docker.com/products/docker-desktop	
+		- https://www.docker.com/products/docker-desktop
+	
 	Download docker-compose v1.27.0+ or latest 
 		- https://docs.docker.com/compose/install/
+
 	Download nvidia 2 and carla docker 0.9.11 (version 0.9.12 has some troubleto run) in this order:
 		- https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installation-guide
-		- https://carla.readthedocs.io/en/latest/build_docker/  
+		- https://carla.readthedocs.io/en/latest/build_docker/
+  
 	Download VScode and install the following extensions:
 		- Remote-Containers
 		- Docker
+
 	Run the following command in your host PC: "xhost +local:docker"
 
 For running only ROS2-Rviz2 docker:
