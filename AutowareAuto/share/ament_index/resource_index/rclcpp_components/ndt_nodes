@@ -1,2 +1,0 @@
-autoware::localization::ndt_nodes::NDTMapPublisherNode;lib/libndt_map_publisher.so
-autoware::localization::ndt_nodes::P2DNDTLocalizerNodeComponent;lib/libp2d_ndt_localizer.so

@@ -1,1 +1,0 @@
-rclcpp;rclcpp_components;tf2;tf2_geometry_msgs;tf2_ros;lanelet2_core;lanelet2_io;lanelet2_projection;lanelet2;autoware_auto_msgs;visualization_msgs;autoware_auto_common;had_map_utils;ament_index_python;ament_cmake_gtest;ament_lint_auto;ament_lint_common;ros_testing

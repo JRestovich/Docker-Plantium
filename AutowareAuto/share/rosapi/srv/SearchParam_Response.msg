@@ -1,2 +1,0 @@
-
-string global_name

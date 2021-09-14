@@ -1,3 +1,0 @@
-source;share/covariance_insertion/environment/ament_prefix_path.sh
-source;share/covariance_insertion/environment/library_path.sh
-source;share/covariance_insertion/environment/path.sh

@@ -1,3 +1,0 @@
-source;share/trajectory_smoother/environment/ament_prefix_path.sh
-source;share/trajectory_smoother/environment/library_path.sh
-source;share/trajectory_smoother/environment/path.sh
