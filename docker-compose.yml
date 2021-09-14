@@ -33,8 +33,8 @@ services:
     command: ./CarlaUE4.sh -quality-level=Low -opengl 
 
   ROS_Autoware_container:
-    #image: ros:foxy-ros1-bridge
-    image: althack/ros2:foxy-gazebo-nvidia
+    #image: ros2:foxy-gazebo-nvidia-v2
+    image: plantium/ros2:foxy-gazebo-nvidia-v3
     container_name: ros_container_2   
 
 
@@ -45,6 +45,8 @@ services:
     - ./AutowareAuto:/home/AutowareAuto
     - ./ros_WS:/home/ros_WS
     - /tmp/.X11-unix:/tmp/.X11-unix:rw #para la placa de video
+    - ./ros-bridge:/home/ros-bridge
+    - ./PythonAPI:/home/PythonAPI
 
     tty: true
 
@@ -76,8 +78,8 @@ services:
     container_name: ros_container   
 
 
-    #command: ros2 run demo_nodes_cpp talker
-    command: bash -c "chmod 777 /home/folder/script.sh && ./home/folder/script.sh "
+    #command: /bin/bash
+    #command: bash -c "chmod 777 /home/folder/script.sh && ./home/folder/script.sh "
 
     volumes: 
       - ./folder:/home/folder

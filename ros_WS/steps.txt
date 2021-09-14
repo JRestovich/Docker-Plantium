@@ -1,0 +1,17 @@
+Export python path to be able to use carla PythonAPI:
+
+export PYTHONPATH=$PYTHONPATH:/home/PythonAPI/carla/dist/carla-0.9.11-py3.7-linux-x86_64.egg:/home/PythonAPI/carla_ros_bridge
+
+Sorce ros workspace:
+
+source /home/ros-bridge/install/setup.bash 
+
+Use one of the following commands to run ros-carla bridge
+
+Bridge without ego vehicle
+#ros2 launch carla_ros_bridge carla_ros_bridge.launch.py host:=carlita
+
+Bridge with ego vehicle (not stable)
+ros2 launch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch.py host:=carlita
+
+Open a new terminal and start writting you new ros2 nodes
