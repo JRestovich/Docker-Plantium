@@ -1,17 +1,43 @@
-Export python path to be able to use carla PythonAPI:
+For installing AuwareAuto you have to follow this steps:
+	rosdep update
+	cd /home/AutowareAuto
+	git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git
+	cd AutowareAuto
+	vcs import < autoware.auto.$ROS_DISTRO.repos
+	export ROS_VERSION=2
+	rosdep install -y -i --from-paths src
+For building AutowareAuto:
+	export COLCON_DEFAULTS_FILE=/path/to/AutowareAuto/tools/ade_image/colcon-defaults.yaml
+	cd AutowareAuto
+	colcon build
+	
+For installing carla-ros bridge you have to follow this steps:
+	cd /home/carlaros-bridge
+	git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
+	source /opt/ros/foxy/setup.bash
+	rosdep update
+    	rosdep install --from-paths src --ignore-src -r
+    	colcon build
+	
+For running the bridge:
+	Export python path to be able to use carla PythonAPI:
+		export PYTHONPATH=$PYTHONPATH:/home/PythonAPI/carla/dist/carla-0.9.11-py3.7-linux-x86_64.egg:/home/PythonAPI/carla_ros_bridge
 
-export PYTHONPATH=$PYTHONPATH:/home/PythonAPI/carla/dist/carla-0.9.11-py3.7-linux-x86_64.egg:/home/PythonAPI/carla_ros_bridge
+Source ros workspace:
+	if you have not priously source ros
+		source /home/carla-ros-bridge/install/setup.bash 
+	if you have priously source ros
+		source /home/carla-ros-bridge/install/localsetup.bash
+	
 
-Sorce ros workspace:
-
-source /home/ros-bridge/install/setup.bash 
-
-Use one of the following commands to run ros-carla bridge
-
+Use one of the following commands to run ros-carla bridge:
 Bridge without ego vehicle
-#ros2 launch carla_ros_bridge carla_ros_bridge.launch.py host:=carlita
-
+	ros2 launch carla_ros_bridge carla_ros_bridge.launch.py host:=carlita
 Bridge with ego vehicle (not stable)
-ros2 launch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch.py host:=carlita
+	ros2 launch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch.py host:=carlita
 
 Open a new terminal and start writting you new ros2 nodes
+	
+
+
+

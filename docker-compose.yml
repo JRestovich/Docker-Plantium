@@ -30,13 +30,19 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
 
-    command: ./CarlaUE4.sh -quality-level=Low -opengl 
+    command: ./CarlaUE4.sh -quality-level=Low  
 
   ROS_Autoware_container:
     #image: ros2:foxy-gazebo-nvidia-v2
     image: plantium/ros2:foxy-gazebo-nvidia-v3
     container_name: ros_container_2   
 
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
 
     #command: ros2 run demo_nodes_cpp talker #ros2 run demo_nodes_cpp listener # source /opt/ros/foxy/setup.bash 
     command: /bin/bash 
@@ -45,19 +51,14 @@ services:
     - ./AutowareAuto:/home/AutowareAuto
     - ./ros_WS:/home/ros_WS
     - /tmp/.X11-unix:/tmp/.X11-unix:rw #para la placa de video
-    - ./ros-bridge:/home/ros-bridge
+    - ./carla-ros-bridge:/home/carla-ros-bridge
     - ./PythonAPI:/home/PythonAPI
 
     tty: true
 
     restart: on-failure
 
-    deploy:
-      resources:
-        reservations:
-          devices:
-          - driver: nvidia
-            capabilities: [gpu]
+    
 
     privileged: true 
 

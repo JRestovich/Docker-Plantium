@@ -48,10 +48,12 @@ OPTION 2 (prefered):
 	4) All the containers will be start and the ROS-Rviz2 will be open in VScode terminal. Also, in the left side of your screen the file system tree of the container will be shown.
 	5) Work as you are in you local machine. The monuted volume works as a share folder, so all the changes you make in the container will persist the next time you open the container.
 	6) The workdirectory where you have to put all yor packages and code is ros_WS.
+	7)Once you are into the containers follow the steps given in steps.txt in ros_WS folder.
 	
 Observations:
 
 	- In the project there are 2 hiden folder that contains configuration files. The .devcontainer have the configuration files for running the container while the .vscode folder contains configuration for ROS2 development.
+
 	
 
 For more dettails of the configuration of VScode environment you can look at Allison Thackston blog: 
