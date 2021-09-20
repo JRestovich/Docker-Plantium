@@ -1,56 +1,30 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.0/containers/docker-existing-docker-compose
-// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
 {
-	"name": "test compose and VScode",
+    "name": "ros_container",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "ROS_Autoware_container",
+    //"service": "ROS_Autoware_container",
+    "shutdownAction": "stopCompose",
 
-	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
-	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
-	"dockerComposeFile": [
-		"../docker-compose.yml",
-		"docker-compose.yml"
-	],
+    // Open the sub-folder with the source code
+    "workspaceFolder": "/home",
 
-	// The 'service' property is the name of the service for the container that VS Code should
-	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
-	"service": "ROS_Autoware_container",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+      "#terminal.integrated.defaultProfile.linux#": "/bin/bash"
+    },
 
-	// The optional 'workspaceFolder' property is the path VS Code should open by default when
-	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/home",
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		//"setting.settingField": param
-		"editor.formatOnSave": true,
-		"workbench.colorTheme": "Cobalt2"
-	},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	// To add an extension you have to find them in the extension window of vscode, copy the identifier and add it to 
-	// extensions section
-	// All the extensions will be add to the container and have no effect in the host machine
-	"extensions": [
-		//extension1,
-		//extension2
-		"wesbos.theme-cobalt2",
-		"tushortz.pygame-snippets",
-		"ms-vscode.cpptools",
-		"ms-python.python"	
-	],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Uncomment the next line if you want start specific services in your Docker Compose config.
-	// "runServices": [],
-
-	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
-	"shutdownAction": "stopCompose",
-
-	// Uncomment the next line to run commands after the container is created - for example installing curl.
-	// "postCreateCommand": "apt-get update && apt-get install -y curl",
-
-	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
-}
+    "extensions": [
+            "dotjoshjohnson.xml",
+            "zachflower.uncrustify",
+            "ms-azuretools.vscode-docker",
+            "ms-python.python",
+            "ms-vscode.cpptools",
+            "redhat.vscode-yaml",
+            "smilerobotics.urdf",
+            "streetsidesoftware.code-spell-checker",
+            "twxs.cmake",
+            "yzhang.markdown-all-in-one",
+            "ms-iot.vscode-ros"
+	],    
+    
+  }

@@ -33,8 +33,7 @@ services:
     command: ./CarlaUE4.sh -quality-level=Low  
 
   ROS_Autoware_container:
-    #image: ros2:foxy-gazebo-nvidia-v2
-    image: plantium/ros2:foxy-gazebo-nvidia-v3
+    image: plantium/ros2:foxy-gazebo-nvidia-v3.1
     container_name: ros_container_2   
 
     deploy:
@@ -51,14 +50,12 @@ services:
     - ./AutowareAuto:/home/AutowareAuto
     - ./ros_WS:/home/ros_WS
     - /tmp/.X11-unix:/tmp/.X11-unix:rw #para la placa de video
-    - ./carla-ros-bridge:/home/carla-ros-bridge
+    - ./ros-bridge:/home/ros-bridge
     - ./PythonAPI:/home/PythonAPI
 
     tty: true
 
-    restart: on-failure
-
-    
+    restart: on-failure   
 
     privileged: true 
 
@@ -66,19 +63,17 @@ services:
       - DISPLAY=$DISPLAY 
       - SDL_VIDEODRIVER=x11  
       - QT_X11_NO_MITSHM=1 
-      - XAUTHORITY:$XAUTH 
+      #- XAUTHORITY:$XAUTH 
       
     networks:
       test-network: #network name
         aliases:
-          - ros2 #link que agrega la dns server como CARLA y carlita
+          - ros_autoware #link que agrega la dns server como CARLA y carlita
 
   ROS_container:
-    #image: ros:foxy-ros1-bridge
-    image: ros:carla-ros
+    image: ros:foxy-ros1-bridge
     container_name: ros_container   
-
-
+    
     #command: /bin/bash
     #command: bash -c "chmod 777 /home/folder/script.sh && ./home/folder/script.sh "
 
@@ -93,10 +88,7 @@ services:
     networks:
       test-network: #network name
         aliases:
-          - rosito #link que agrega la dns server como CARLA y carlita
-
-  
-
+          - ros_1_2 #link que agrega la dns server como CARLA y carlita
   
 networks:
   test-network:

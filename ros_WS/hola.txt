@@ -4,7 +4,7 @@ safds
 
 xhost +local:docker
 
-export PYTHONPATH=$PYTHONPATH:/home/PythonAPI/carla/dist/carla-0.9.11-py3.7-linux-x86_64.egg:/home/PythonAPI/carla_ros_bridge
+export PYTHONPATH=$PYTHONPATH:/home/PythonAPI/carla/dist/carla-0.9.11-py3.7-linux-x86_64.egg:/home/PythonAPI/carla
 source /home/ros-bridge/install/setup.bash 
 #source /opt/ros/foxy/setup.bash 
 sleep  120

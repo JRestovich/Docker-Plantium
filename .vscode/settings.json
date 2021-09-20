@@ -68,5 +68,5 @@
         ".vscode-insiders",
         ".devcontainer/devcontainer.json"
     ],
-    "git.ignoreLimitWarning": true
+    "ros.distro": "foxy"
 }
